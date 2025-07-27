@@ -23,7 +23,6 @@ You type your mood — happy, heartbroken, chaotic, gym-raging, sleepy, anything
 
 * A unique playlist title and emoji
 * 5–8 song recommendations (via Spotify)
-* 30-second playable previews
 * Options to download your playlist in `.json`, `.csv`, or `.txt` formats
 
 ## 🛠️ How We Built It
