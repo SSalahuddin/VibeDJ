@@ -2,8 +2,8 @@
 
 ## 💡 Inspiration
 
-Music is therapy. But choosing the right songs when you're in your *feels*? Emotionally exhausting.
-We wanted to build something that listens to your emotions — and instantly responds with music that gets it.
+Music is therapy. But choosing the right songs when we're in our *feels*? Emotionally exhausting.
+We wanted to build something that listens to our emotions and instantly responds with music that truly understands them.
 
 **VibeDJ** was inspired by:
 
@@ -16,7 +16,7 @@ We wanted to build something that listens to your emotions — and instantly res
 **VibeDJ** is a mood-to-music playlist generator powered by:
 
 * **Gemini** (Google Generative AI) for creative playlist curation
-* **Spotify Web API** for real song previews and track links
+* **Spotify Web API** for real song and track links
 * **Streamlit** for a fast, fun user interface
 
 You type your mood — happy, heartbroken, chaotic, gym-raging, sleepy, anything — and it responds with:
@@ -31,26 +31,25 @@ We built **VibeDJ** using:
 
 * `streamlit`: frontend UI and deployment
 * `google-generativeai`: to prompt Gemini to generate human-like, themed playlists
-* `spotipy`: to search songs and retrieve Spotify preview URLs
+* `spotipy`: to search songs and retrieve Spotify URLs
 * `pandas`: for converting playlists to downloadable formats
 
 ### Workflow:
 
-1. User enters their mood via a text input.
+1. The user enters their mood via a text input.
 2. A few-shot prompt is sent to Gemini to generate a themed playlist (e.g., sad breakup → Adele, Lorde, etc.).
 3. Each generated song is searched via Spotify API to get:
 
    * Title
    * Artist
-   * 30s audio preview
    * Direct Spotify link
-4. Users see the playlist, preview songs, and download it in their preferred format.
+4. Users see the playlist, songs, and download them in their preferred format.
 
 
 ## 🧱 Challenges We Ran Into
 
 * **Parsing Gemini’s output** into usable song names required careful pattern matching.
-* Not every track had a Spotify preview URL — we had to gracefully skip or substitute.
+* Not every track had a Spotify preview URL — we had to skip or substitute gracefully.
 * Streamlit's file handling is **stateless** — we moved to dynamic download buttons using `st.download_button`.
 * Spotify’s redirect URI requirement added friction (though resolved with a dummy HTTPS URI).
 
@@ -65,7 +64,7 @@ We built **VibeDJ** using:
 
 * Gemini performs much better with **few-shot prompting** and styled tone control
 * Spotipy’s Client Credentials Flow is perfect for music search without login
-* Streamlit is incredibly fast to prototype — and fun to design expressive apps in
+* Streamlit is incredibly fast to prototype and fun to design expressive apps
 * UI/UX matters — even little things like emoji and tone made the bot feel alive 🎭
 
 Also, math is hard, but music is math.
@@ -85,4 +84,3 @@ Here’s what we’re planning next:
 
 **Try it now:** [https://huggingface.co/spaces/Sumayyea/VibeDJ](https://huggingface.co/spaces/Sumayyea/VibeDJ)
 *“You bring the feels. I bring the beats.”* 🎧
-
